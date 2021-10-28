@@ -8,9 +8,7 @@ pil_img = Image.fromarray(group_photo)
 
 fnt = ImageFont.truetype('/usr/share/fonts/truetype/ubuntu/Ubuntu-B.ttf', 30)
 
-count = 0
 for face_location in group_photo_location:
-    count += 1
     top, right, bottom, left = face_location
     draw = ImageDraw.Draw(pil_img)
     draw.rectangle((left, top, right, bottom), outline=(0, 0, 0), width=4)
