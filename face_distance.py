@@ -6,9 +6,9 @@ encoded_img = face_recognition.face_encodings(img)
 
 print('It has', len(encoded_img), 'face(s)')
 
-for each_face in range(len(encoded_img)):
-    next_pic = each_face+1
-    if each_face+1 >= len(encoded_img):
-        next_pic = 0
-    x = face_recognition.face_distance([encoded_img[each_face]], encoded_img[next_pic])
-    print('Face distance of {0} and {1}: '.format(each_face, next_pic), x)
+each_face = []
+for i in range(1, len(encoded_img)):
+    ele = encoded_img[i]
+    each_face.append(ele)
+x = face_recognition.face_distance(each_face, encoded_img[0])
+print('Face distance of Face 0 with 1, 2, and 3: ', x)
